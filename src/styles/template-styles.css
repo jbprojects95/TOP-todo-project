@@ -61,8 +61,10 @@ body {
   overflow: hidden;
   text-wrap: nowrap;
 
-  box-shadow: 1px 0 0 color-mix(in oklch, var(--line-clr) 90%, transparent),
-    4px 0 10px oklch(0 0 0 / 0.18), inset -1px 0 0 oklch(1 0 0 / 0.04);
+  box-shadow:
+    1px 0 0 color-mix(in oklch, var(--line-clr) 90%, transparent),
+    4px 0 10px oklch(0 0 0 / 0.18),
+    inset -1px 0 0 oklch(1 0 0 / 0.04);
 }
 
 .sidebar svg {
@@ -117,7 +119,9 @@ body {
   max-width: 200px;
   overflow: hidden;
   white-space: nowrap;
-  transition: opacity 0.25s ease, max-width 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    max-width 0.25s ease;
   opacity: 1;
 }
 
@@ -193,6 +197,7 @@ body {
 }
 
 .sidebar .sub-menu {
+  width: 100%;
   display: grid;
   grid-template-rows: 0fr;
   transition: 300ms ease-in-out;
@@ -219,10 +224,6 @@ body {
 .sidebar .sub-menu a {
   padding-inline-start: 2rem;
   width: 200px;
-}
-
-.sidebar .sub-menu {
-  width: 100%;
 }
 
 .toggle-btn {
@@ -266,7 +267,8 @@ label[for="base-colour-input"] {
   gap: 1rem;
   /* cursor: pointer; */
   border: 1px solid var(--line-clr);
-  box-shadow: 0 0 0 1px color-mix(in oklch, var(--line-clr) 90%, transparent),
+  box-shadow:
+    0 0 0 1px color-mix(in oklch, var(--line-clr) 90%, transparent),
     inset 0 0 2px 1px color-mix(in oklch, var(--base-clr) 25%, transparent);
 }
 
@@ -291,7 +293,8 @@ main p {
 }
 
 .container {
-  box-shadow: 0 0 0 1px color-mix(in oklch, var(--line-clr) 90%, transparent),
+  box-shadow:
+    0 0 0 1px color-mix(in oklch, var(--line-clr) 90%, transparent),
     0 0 10px oklch(0 0 0 / 0.18),
     inset 0 0 2px 1px color-mix(in oklch, var(--base-clr) 25%, transparent);
   /* box-shadow: 0 0 0 1px var(--line-clr), 0 1px 2px oklch(0 0 0 / 0.15),
