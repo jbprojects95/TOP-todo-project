@@ -1,24 +1,19 @@
 import { loadHome } from "./pages/home";
-import { loadCalendar } from "./pages/calendar";
-import { loadDashboard } from "./pages/dashboard";
-import { loadProfile } from "./pages/profile";
+import { loadProjects } from "./pages/projects";
+import { loadTodo } from "./pages/todopage";
 
 const routes = {
   home: {
     title: "Home",
     render: loadHome,
   },
-  dashboard: {
-    title: "Dashboard",
-    render: loadDashboard,
+  projects: {
+    title: "projects",
+    render: loadProjects,
   },
-  calendar: {
-    title: "Calendar",
-    render: loadCalendar,
-  },
-  profile: {
-    title: "Profile",
-    render: loadProfile,
+  todo: {
+    title: "Todo Page",
+    render: loadTodo,
   },
 };
 

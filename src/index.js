@@ -1,6 +1,8 @@
 import "./styles/template-styles.css";
 
 import { navigate } from "./router";
+import { TodoItem } from "./modules/todo";
+import { Project } from "./modules/project";
 
 /* 
 EXAMPLE IMG IMPORT:
@@ -85,7 +87,7 @@ function setColour() {
   document.body.setAttribute(
     "style",
     `--base-clr: ${colourHex.value};
-    --text-clr: ${lightness > 65 ? "black" : "white"}`
+    --text-clr: ${lightness > 65 ? "black" : "white"}`,
   );
 }
 

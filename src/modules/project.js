@@ -1,4 +1,4 @@
-export class Projects {
+export class Project {
   constructor(name) {
     this.name = name;
   }
