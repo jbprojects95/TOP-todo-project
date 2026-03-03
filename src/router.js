@@ -1,6 +1,6 @@
 import { loadHome } from "./pages/home";
 import { loadProjects } from "./pages/projects";
-import { loadTodo } from "./pages/todopage";
+import { loadTodo } from "./pages/todoPage";
 
 const routes = {
   home: {
@@ -8,11 +8,11 @@ const routes = {
     render: loadHome,
   },
   projects: {
-    title: "projects",
+    title: "Projects",
     render: loadProjects,
   },
   todo: {
-    title: "Todo Page",
+    title: "Todo-page",
     render: loadTodo,
   },
 };

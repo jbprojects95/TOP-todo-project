@@ -1,0 +1,16 @@
+Example of hooking up scoped styles:
+
+import "../styles/todoPage-styles.css";
+
+export function loadTodo(container) {
+  container.innerHTML = `
+  <div class="todoPage">
+    <h1>Todo Page Successfully Loaded!</h1>
+    </div>
+  
+  `;
+}
+
+It's important to remember to add a div around the page's main content that -
+has a name that matches the first part of the css files name.
+
