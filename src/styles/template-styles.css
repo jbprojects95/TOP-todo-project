@@ -303,9 +303,9 @@ main p {
   border-radius: 1rem;
   margin-bottom: 1.6rem;
   padding-inline: min(24px, 2.4%);
-  padding-block: 1rem;
+  padding-block: 0.2rem;
   color: var(--text-clr);
-  background-color: var(--surface-clr);
+  background-color: var(--base-clr);
 
   h2,
   p {

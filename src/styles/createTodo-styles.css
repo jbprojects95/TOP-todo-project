@@ -22,7 +22,10 @@
     inset 0 0 2px 1px color-mix(in oklch, var(--base-clr) 25%, transparent);
 }
 
-.dashboard {
+.page-createTodo .container {
+}
+
+/* .dashboard {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 0.8rem;
@@ -34,4 +37,4 @@
   background-color: var(--surface-clr);
   border: 2px solid var(--line-clr);
   border-radius: 0.5rem;
-}
+} */

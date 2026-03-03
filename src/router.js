@@ -1,18 +1,18 @@
 import { loadHome } from "./pages/home";
-import { loadProjects } from "./pages/projects";
-import { loadTodo } from "./pages/todoPage";
+import { createProject } from "./pages/createProject";
+import { loadTodo } from "./pages/createTodo";
 
 const routes = {
   home: {
     title: "Home",
     render: loadHome,
   },
-  projects: {
-    title: "Projects",
-    render: loadProjects,
+  createProject: {
+    title: "Create Project",
+    render: createProject,
   },
-  todo: {
-    title: "Todo-page",
+  createTodo: {
+    title: "Create Todo",
     render: loadTodo,
   },
 };

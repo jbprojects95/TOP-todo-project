@@ -4,13 +4,38 @@ import "../styles/todoPage-styles.css";
 
 export function loadTodo(container) {
   container.innerHTML = `
-  <div class="todoPage">
+  <div class="wrapper">
     <h1>Todo Page Successfully Loaded!</h1>
     </div>
   
   `;
 }
 
-It's important to remember to add a div around the page's main content that -
-has a name that matches the first part of the css files name.
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 0.5rem;
+  padding: 0.8rem;
+  border: 2px solid var(--line-clr);
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+
+  box-shadow:
+    0 0 0 1px color-mix(in oklch, var(--line-clr) 90%, transparent),
+    0 0 10px oklch(0 0 0 / 0.18),
+    inset 0 0 2px 1px color-mix(in oklch, var(--base-clr) 25%, transparent);
+}
+
+.page-createTodo .container {
+  background-color: red;
+}
+
+.wrapper is unique to createTodo, but container isn't. 
+If i style .container without ".page-{route}" then it bleeds out into all .container styles
+Anything unique doesn't need it, anything that's shared across styles requires the unique page class. 
+
+
 
