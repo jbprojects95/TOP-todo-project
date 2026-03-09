@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
-.wrapper {
+.page-createTodo .wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 0.5rem;
   padding: 0.8rem;
   border: 2px solid var(--line-clr);
@@ -23,6 +23,8 @@
 }
 
 .page-createTodo .container {
+  width: 100%;
+  max-width: 800px;
 }
 
 /* .dashboard {

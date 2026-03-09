@@ -4,12 +4,8 @@ export function loadTodo(container) {
   container.innerHTML = `
       <div class="wrapper">
       <div class="container">
-          <h2>Example Container</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae
-            nisi sed non accusantium temporibus sit nemo minus qui neque quae.
-            Nihil corrupti doloribus autem, animi ullam rerum a ipsum nostrum?
-          </p>
+          <h1>Todo Item Example: Empty dishwasher</h1>
+
         </div>
   </div>
   

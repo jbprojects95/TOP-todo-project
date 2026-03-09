@@ -286,13 +286,21 @@ label[for="base-colour-input"] {
   font-weight: bold;
 }
 
-main p {
+/* main p {
   color: var(--secondary-text-clr);
   margin-block-start: 0.5rem;
   margin-block-end: 1rem;
-}
+} */
 
-.container {
+.todo-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+
+  width: 100%;
+  max-width: 1200px;
+
   box-shadow:
     0 0 0 1px color-mix(in oklch, var(--line-clr) 90%, transparent),
     0 0 10px oklch(0 0 0 / 0.18),
@@ -300,17 +308,51 @@ main p {
   /* box-shadow: 0 0 0 1px var(--line-clr), 0 1px 2px oklch(0 0 0 / 0.15),
     inset 0 0 0 1px oklch(1 0 0 / 0.04); */
   border: 1px solid var(--line-clr);
-  border-radius: 1rem;
-  margin-bottom: 1.6rem;
-  padding-inline: min(24px, 2.4%);
-  padding-block: 0.2rem;
+  border-radius: 0.5rem;
+
+  padding-inline: min(20px, 2%);
+  padding-block: 0.5rem;
   color: var(--text-clr);
   background-color: var(--base-clr);
+}
 
-  h2,
-  p {
-    margin-top: 1rem;
-  }
+.todo-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+}
+
+.wrapper {
+  width: 100%;
+  /* max-width: 1200px; */
+
+  border: 2px solid var(--line-clr);
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+
+  padding-block: 0.8rem;
+  padding-inline: min(20px, 2.4%);
+
+  box-shadow:
+    0 0 0 1px color-mix(in oklch, var(--line-clr) 90%, transparent),
+    0 0 10px oklch(0 0 0 / 0.18),
+    inset 0 0 2px 1px color-mix(in oklch, var(--base-clr) 25%, transparent);
+
+  gap: 0.8rem;
+}
+
+.title {
+  border-bottom: 2px solid var(--line-clr);
+  padding-inline-start: min(20px, 2.4%);
+}
+
+.title h1 {
+  line-height: 0;
+  padding-block-start: 1rem;
+  padding-block-end: 1.8rem;
 }
 
 @media (max-width: 800px) {
@@ -327,7 +369,7 @@ main p {
 
   .container {
     border: none;
-    padding: 1rem;
+    padding: 0.1rem;
   }
 
   .sidebar {
