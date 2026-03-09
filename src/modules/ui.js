@@ -66,6 +66,17 @@ export function initUI() {
     }
   });
 
+  function handleResize() {
+    if (window.innerWidth <= 800) {
+      sidebar.classList.remove("close");
+      toggleButton.classList.remove("rotate");
+      closeAllSubMenus();
+    }
+  }
+
+  window.addEventListener("resize", handleResize);
+  handleResize();
+
   // ----------[COLOUR THEME CODE]----------
 
   function setColour() {
