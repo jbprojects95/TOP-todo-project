@@ -4,25 +4,29 @@
   box-sizing: border-box;
 }
 
-.page-createTodo .wrapper {
-  padding: 2rem;
+.todo-form {
+  padding-inline: 0.5rem;
+  padding-block: 0.25rem;
 }
 
-.page-createTodo .container {
-  width: 100%;
-  max-width: 800px;
+.form-row {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.25rem;
 }
 
-/* .dashboard {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.8rem;
+.form-row input[type="text"] {
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
+
+  padding: 0.3rem;
+  font-size: 0.8rem;
 }
 
-.dashboard .shape {
-  width: 100%;
-  aspect-ratio: 1/1;
-  background-color: var(--surface-clr);
-  border: 2px solid var(--line-clr);
-  border-radius: 0.5rem;
-} */
+.form-row button {
+  align-self: center;
+  width: 25%;
+}
