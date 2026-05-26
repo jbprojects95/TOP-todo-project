@@ -1,4 +1,4 @@
-class TodoItem {
+export default class TodoItem {
   constructor(id, text, dueDate, priority) {
     this.id = id;
     this.text = text;

@@ -1,4 +1,4 @@
-import { Project } from "./project.js";
+import Project from "./project.js";
 
 const workProject = new Project("Work", "work");
 const homeProject = new Project("Home", "home");

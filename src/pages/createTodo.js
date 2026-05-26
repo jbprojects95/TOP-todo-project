@@ -1,31 +1,46 @@
 import "../styles/createTodo-styles.css";
+import { initTodoController } from "../modules/todoController.js";
 
 export function loadTodo(container) {
   container.innerHTML = `
       <div class="wrapper">
-      <div class="container">
-          <form action="" method="get" class="todo-form">
+  <h1>Create Todo:</h1>
+<form action="" method="get" class="todo-form" id="todoForm">
+
+
   <div class="form-row">
-    <label for="project">Project:</label>
+    <label for="project">Project:
     <select name="project" id="selectProject">
-      <option value="work">Work</option>
-      <option value="home">Home</option>
-      <option value="misc">Misc</option>
-    </select>
+
+    </select></label>
   </div>
 
   <div class="form-row">
-    <label for="todo-item">Todo:</label>
-    <input type="text" id="todoItemText" name="todo-item" />
+    <label for="dueDate">Due Date:
+    <input type="date" id="dueDate" name="dueDate" ></label>
   </div>
 
-        <div class="form-row">
-        <button>Submit</button>
-      </div>
-</form>
-
-        </div>
+  <div class="form-row">
+    <label for="priority">Priority:
+      <input type="checkbox" name="priority" id="priority">
+    </label>
   </div>
-  
-  `;
+
+  <div class="form-row">
+    <label for="todoItem">Todo:
+    <input type="text" id="todoItemText" name="todoItem" maxlength="140" /></label>
+  </div>
+
+  <div class="form-row">
+    <button>Submit</button>
+  </div>
+</form></div>
+
+<div class="wrapper">
+    <h1>Todos:</h1>
+  <ul class="todo-list" id="todoContainer">
+    </ul>
+</div>`;
+
+  initTodoController();
 }
