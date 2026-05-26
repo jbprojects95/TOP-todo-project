@@ -1,10 +1,9 @@
-export class TodoItem {
-  constructor(title, description, dueDate, priority) {
-    this.title = title;
-    this.description = description;
+class TodoItem {
+  constructor(id, text, dueDate, priority) {
+    this.id = id;
+    this.text = text;
     this.dueDate = dueDate;
     this.priority = priority;
     this.completed = false;
-    this.notes = "";
   }
 }
