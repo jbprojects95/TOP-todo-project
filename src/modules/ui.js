@@ -47,7 +47,7 @@ export function initUI() {
 
   function setActive(navbarItem) {
     document
-      .querySelectorAll("[data-route]")
+      .querySelectorAll("[data-route], [data-project-id]")
       .forEach((item) => item.classList.remove("active"));
 
     navbarItem.classList.add("active");
@@ -89,6 +89,7 @@ export function initUI() {
     if (!project) return;
 
     setCurrentProject(project);
+    setActive(projectLink);
     navigate("projects");
   });
 
