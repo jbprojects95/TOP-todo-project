@@ -9,6 +9,7 @@ import { populateProjectDropDown, generateTodoCards } from "./todoRender.js";
 export function initTodoController() {
   const todoForm = document.getElementById("todoForm");
   const todoContainer = document.getElementById("todoContainer");
+  const mainContent = document.getElementById("main-content");
   if (!todoForm || !todoContainer) return;
   populateProjectDropDown(allProjects);
 
@@ -35,18 +36,32 @@ export function initTodoController() {
     todoContainer.innerHTML = generateTodoCards(chosenProject.todos);
 
     form.reset();
+    form.project.value = selectedProject;
   });
 
-  // DELETE BUTTON:
+  // TCARD BUTTONS:
 
-  todoContainer.addEventListener("click", (e) => {
-    const currentProject = getCurrentProject();
-    let button = e.target.closest("button");
+  mainContent.addEventListener("click", (e) => {
+    // const currentProject = getCurrentProject();
+    const button = e.target.closest("button");
     if (!button) return;
+
+    const todoCard = button.closest(".todo-card");
+    if (!todoCard) return;
+
+    const currentProject = getCurrentProject();
+    const todoContainer = document.getElementById("todoContainer");
+    if (!todoContainer) return;
+
+    const todoId = todoCard.dataset.id;
+
     if (button.dataset.button === "delete") {
-      const todoCard = button.closest(".todo-card");
-      currentProject.deleteTodo(todoCard.dataset.id);
-      todoContainer.innerHTML = generateTodoCards(currentProject.todos);
+      currentProject.deleteTodo(todoId);
     }
+    if (button.dataset.button === "complete") {
+      currentProject.toggleTodo(todoId);
+    }
+
+    todoContainer.innerHTML = generateTodoCards(currentProject.todos);
   });
 }

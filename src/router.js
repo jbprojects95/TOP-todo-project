@@ -1,6 +1,7 @@
 import { loadHome } from "./pages/home";
 import { createProject } from "./pages/createProject";
 import { loadTodo } from "./pages/createTodo";
+import { loadProject } from "./pages/projects";
 
 const routes = {
   home: {
@@ -14,6 +15,10 @@ const routes = {
   createTodo: {
     title: "Create Todo",
     render: loadTodo,
+  },
+  projects: {
+    title: "Projects",
+    render: loadProject,
   },
 };
 

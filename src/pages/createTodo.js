@@ -1,7 +1,10 @@
 import "../styles/createTodo-styles.css";
 import { initTodoController } from "../modules/todoController.js";
+import { getCurrentProject } from "../modules/todoStore.js";
+import { generateTodoCards, renderTodoList } from "../modules/todoRender.js";
 
 export function loadTodo(container) {
+  const currentProject = getCurrentProject();
   container.innerHTML = `
       <div class="wrapper">
   <h1>Create Todo:</h1>
@@ -36,11 +39,14 @@ export function loadTodo(container) {
   </div>
 </form></div>
 
+
 <div class="wrapper">
-    <h1>Todos:</h1>
-  <ul class="todo-list" id="todoContainer">
-    </ul>
-</div>`;
+      <h1>Todos:</h1>
+      <ul class="todo-list" id="todoContainer">
+        ${renderTodoList(currentProject.todos)}
+      </ul>
+    </div>
+`;
 
   initTodoController();
 }

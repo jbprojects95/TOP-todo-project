@@ -144,6 +144,14 @@
   background-color: var(--base-clr); */
 }
 
+.todo-card.completed {
+  opacity: 0.5;
+}
+
+.todo-card.completed .todo-task {
+  text-decoration: line-through;
+}
+
 .todo-count {
   grid-column: 1;
   grid-row: 2;

@@ -1,4 +1,7 @@
 import { navigate } from "../router";
+import { allProjects, setCurrentProject } from "./todoStore.js";
+import { generateProjectList, generateTodoCards } from "./todoRender.js";
+import { loadHome } from "../pages/home.js";
 
 export function initUI() {
   const dropDowns = document.querySelectorAll(".dropdown-btn");
@@ -64,6 +67,29 @@ export function initUI() {
     } else {
       setActive(link);
     }
+  });
+
+  // -----------------------------------------------------------
+
+  // *SIDEBAR PROJECT DROPDOWN FN*
+
+  const projectMenu = document.getElementById("allProjectSubMenu");
+
+  if (projectMenu) {
+    projectMenu.innerHTML = generateProjectList(allProjects);
+  }
+
+  document.addEventListener("click", (e) => {
+    const projectLink = e.target.closest("[data-project-id]");
+    if (!projectLink) return;
+
+    const projectId = projectLink.dataset.projectId;
+    const project = allProjects.find((project) => project.id === projectId);
+
+    if (!project) return;
+
+    setCurrentProject(project);
+    navigate("projects");
   });
 
   function handleResize() {
