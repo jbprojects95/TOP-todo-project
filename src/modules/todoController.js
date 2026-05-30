@@ -61,6 +61,14 @@ export function initTodoController() {
     if (button.dataset.button === "complete") {
       currentProject.toggleTodo(todoId);
     }
+    if (button.dataset.button === "edit") {
+      const selectedTodo = currentProject.todos.find(
+        (todo) => todo.id === todoId,
+      );
+
+      const popover = document.getElementById("editTodoPopover");
+      popover.showPopover();
+    }
 
     todoContainer.innerHTML = generateTodoCards(currentProject.todos);
   });

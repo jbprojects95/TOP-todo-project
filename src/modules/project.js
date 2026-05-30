@@ -19,4 +19,13 @@ export default class Project {
     // this seems to let me toggle the completed state on and off
     todo.completed = !todo.completed;
   }
+
+  editTodo(id) {
+    const selectedTodo = this.todos.find((todo) => todo.id === id);
+    const newValues = {
+      text: this.editTodoText.value,
+      dueDate: editDueDate.value,
+      priority: editPriority.checked,
+    };
+  }
 }

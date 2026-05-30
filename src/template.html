@@ -133,6 +133,22 @@
         </div>
       </div>
       <div id="main-content"></div>
+      <div id="editTodoPopover" popover>
+        <form id="editTodoForm">
+          <input type="text" id="editTodoText" />
+          <input type="date" id="editDueDate" />
+          <input type="checkbox" id="editPriority" />
+
+          <button type="submit">Save</button>
+          <button
+            type="button"
+            popovertarget="editTodoPopover"
+            popovertargetaction="hide"
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
     </main>
     <!-- <footer>Footer</footer> -->
   </body>

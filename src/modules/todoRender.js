@@ -39,7 +39,7 @@ export function generateTodoCards(projectArray) {
               >
             </div>
             <div class="todo-buttons">
-              <button data-button="edit">
+              <button data-button="edit" popovertarget="editTodo">
                 <svg
                   viewBox="0 0 492.49284 492"
                   fill="#e3e3e3"
