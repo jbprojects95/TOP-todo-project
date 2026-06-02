@@ -1,6 +1,8 @@
-export function populateProjectDropDown(options) {
-  const projectList = document.getElementById("selectProject");
+export function populateProjectDropDown(options, dropdown) {
+  const projectList = document.getElementById(dropdown);
   // This creates an option element, using the title as what is displayed and id as the value
+  if (!projectList) return;
+  projectList.innerHTML = "";
   options.forEach((option) => {
     projectList.add(new Option(option.title, option.id));
   });
@@ -39,7 +41,7 @@ export function generateTodoCards(projectArray) {
               >
             </div>
             <div class="todo-buttons">
-              <button data-button="edit" popovertarget="editTodo">
+              <button data-button="edit">
                 <svg
                   viewBox="0 0 492.49284 492"
                   fill="#e3e3e3"

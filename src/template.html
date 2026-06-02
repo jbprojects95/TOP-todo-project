@@ -48,7 +48,6 @@
             </button>
           </a>
         </li>
-
         <li>
           <a data-route="home" class="active">
             <svg
@@ -63,7 +62,6 @@
             <span>Home</span>
           </a>
         </li>
-
         <li>
           <button class="dropdown-btn">
             <svg
@@ -95,7 +93,6 @@
             </div>
           </ul>
         </li>
-
         <li>
           <button class="dropdown-btn">
             <svg
@@ -126,27 +123,43 @@
       <div class="main-header-container">
         <span class="main-title" id="page-title">Home</span>
         <div class="colour-picker">
-          <label for="base-colour-input"
-            >Theme:
+          <label for="base-colour-input">
+            Theme:
             <input type="color" id="base-colour-input" />
           </label>
         </div>
       </div>
       <div id="main-content"></div>
       <div id="editTodoPopover" popover>
-        <form id="editTodoForm">
-          <input type="text" id="editTodoText" />
-          <input type="date" id="editDueDate" />
-          <input type="checkbox" id="editPriority" />
-
-          <button type="submit">Save</button>
-          <button
-            type="button"
-            popovertarget="editTodoPopover"
-            popovertargetaction="hide"
-          >
-            Cancel
-          </button>
+        <form action="" method="get" class="todo-form" id="editTodoForm">
+          <div class="form-row">
+            <label for="editDueDate">
+              Due Date:
+              <input name="editDueDate" type="date" id="editDueDate" />
+            </label>
+          </div>
+          <div class="form-row">
+            <label for="editPriority">
+              Priority:
+              <input name="editPriority" type="checkbox" id="editPriority" />
+            </label>
+          </div>
+          <div class="form-row">
+            <label for="editTodoText">
+              Todo:
+              <input name="editTodoText" id="editTodoText" maxlength="140" />
+            </label>
+          </div>
+          <div class="form-row">
+            <button type="submit">Save</button>
+            <button
+              type="button"
+              popovertarget="editTodoPopover"
+              popovertargetaction="hide"
+            >
+              Cancel
+            </button>
+          </div>
         </form>
       </div>
     </main>

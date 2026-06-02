@@ -20,12 +20,13 @@ export default class Project {
     todo.completed = !todo.completed;
   }
 
-  editTodo(id) {
+  editTodo(id, text, dueDate, priority) {
     const selectedTodo = this.todos.find((todo) => todo.id === id);
-    const newValues = {
-      text: this.editTodoText.value,
-      dueDate: editDueDate.value,
-      priority: editPriority.checked,
-    };
+
+    if (!selectedTodo) return;
+
+    selectedTodo.text = text;
+    selectedTodo.dueDate = dueDate;
+    selectedTodo.priority = priority;
   }
 }

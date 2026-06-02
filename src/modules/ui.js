@@ -93,6 +93,10 @@ export function initUI() {
     navigate("projects");
   });
 
+  // ---------------------------------
+  // *WINDOW RESIZE FN
+  // ---------------------------------
+
   function handleResize() {
     if (window.innerWidth <= 800) {
       sidebar.classList.remove("close");
