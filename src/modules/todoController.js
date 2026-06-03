@@ -4,13 +4,19 @@ import {
   getCurrentProject,
   setCurrentProject,
 } from "./todoStore.js";
-import { populateProjectDropDown, generateTodoCards } from "./todoRender.js";
+import {
+  populateProjectDropDown,
+  generateTodoCards,
+  generateProjectList,
+} from "./todoRender.js";
+import Project from "./project.js";
 
 export function initTodoController() {
   const todoForm = document.getElementById("todoForm");
   const todoContainer = document.getElementById("todoContainer");
   const mainContent = document.getElementById("main-content");
   const editTodoForm = document.getElementById("editTodoForm");
+  const createProjectForm = document.getElementById("createProjectForm");
 
   if (todoForm && todoContainer) {
     todoForm.addEventListener("submit", (e) => {
@@ -59,6 +65,32 @@ export function initTodoController() {
       }
 
       document.getElementById("editTodoPopover").hidePopover();
+    });
+  }
+
+  if (createProjectForm) {
+    createProjectForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+      const projectName = form.projectName.value.trim();
+
+      if (!projectName) return;
+
+      const projectId = crypto.randomUUID();
+
+      const newProject = new Project(projectName, projectId);
+
+      allProjects.push(newProject);
+      setCurrentProject(newProject);
+
+      const projectMenu = document.getElementById("allProjectSubMenu");
+
+      if (projectMenu) {
+        projectMenu.innerHTML = generateProjectList(allProjects);
+      }
+
+      form.reset();
     });
   }
 
